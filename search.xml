@@ -17,8 +17,8 @@
         <category>nginx</category>
       </categories>
       <tags>
-        <tag>nginx</tag>
         <tag>报错</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
@@ -115,11 +115,11 @@
         <category>rtsp</category>
       </categories>
       <tags>
+        <tag>nginx</tag>
         <tag>rtsp</tag>
         <tag>ffmpeg</tag>
         <tag>streamedian</tag>
         <tag>rtmp</tag>
-        <tag>nginx</tag>
         <tag>web</tag>
       </tags>
   </entry>
