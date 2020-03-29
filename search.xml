@@ -10,7 +10,6 @@
 <p>查看 <code>error.log</code> 也没有其他报错。</p>
 <p>也觉得会不会是权限不够，所以给了nginx目录777，还是不对。</p>
 <p>最后发现是需要在nginx根目录下执行才行，晕，明明环境变量都加了，不过解决了就好。</p>
-<p><img src="/images/WechatIMG120.png" alt=""></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在cmd中cd到nginx.exe同级目录再执行，就可以了。</p>
 ]]></content>
       <categories>
