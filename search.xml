@@ -41,7 +41,7 @@
 <li>只能同时打开两个流视频</li>
 <li>只支持内网</li>
 </ul>
-<p>不过问题也不大，他们也有提供付费版本供你选择。</p>
+<p>如果有需求可以选择对应的付费版本。</p>
 <p><img src="/images/chongqianjiunengjiejue.jpeg" alt=""></p>
 <h1 id="FFmpeg-Nginx"><a href="#FFmpeg-Nginx" class="headerlink" title="FFmpeg + Nginx"></a>FFmpeg + Nginx</h1><p>本来一直使用streamedian都没什么问题，直到在一个项目上突然掉坑里爬不出来，链接只能是localhost，只要写服务器ip就会被认定是外网。</p>
 <p><img src="/images/1513758710130558.jpg" alt=""></p>
