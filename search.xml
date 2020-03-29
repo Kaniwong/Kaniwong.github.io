@@ -31,8 +31,10 @@
 <p>安装完成后打开应用后会在浏览器中弹出如下图的页面，说明就已经成功了（没错！就是这么简单）。</p>
 <p><img src="/images/QQ20200329-094830.png" alt=""></p>
 <p>接下来你要做的就是拼接 <code>rtsp</code> 地址，每个供应商的拼接方法多少会有点不一样，所以具体情况请根据对应的开发文档灵活变通下。这里也列出我常用的两种：</p>
-<p><strong>大华</strong>：rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/cam/realmonitor?channel=1&amp;subtype=0（这里的参数请参考大华提供的开发文档，如果没特殊需求可以不用做更改直接使用）</p>
-<p><strong>霍尼韦尔</strong>：rtsp://<code>username</code>:<code>password</code>@1<code>ip</code>:554/h264</p>
+<p><strong>大华</strong>：</p>
+<p>rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/cam/realmonitor?channel=1&amp;subtype=0（这里的参数请参考大华提供的开发文档，如果没特殊需求可以不用做更改直接使用）</p>
+<p><strong>霍尼韦尔</strong>：</p>
+<p>rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/h264</p>
 <p>点击 <code>set</code> ，不出意外就可以看到画面了。</p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><strong>白嫖是有极限的！</strong></p>
 <ul>
@@ -74,13 +76,13 @@
 <li><p>打开  <code>nginx-win-rtmp.conf</code> ，在文件的最末端添加以下配置信息，保存。</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设定rtmp服务器，实现推流</span></span><br><span class="line">rtmp&#123;</span><br><span class="line">	server&#123;</span><br><span class="line">		<span class="attribute">listen</span> <span class="number">1935</span>;</span><br><span class="line">		<span class="attribute">application</span> live&#123;</span><br><span class="line">			<span class="attribute">live</span> <span class="literal">on</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>打开  <code>cmd</code> ，依次输入指令（进入到nginx跟目录，指定配置文件启动nginx）</p>
+<li><p>打开  <code>cmd</code> ，依次输入指令（进入到nginx根目录，指定配置文件启动nginx）</p>
 <ul>
 <li><p><code>cd D:\ngnx-1.7.11.3-Gryphon</code> </p>
 </li>
 <li><p><code>d:</code></p>
 </li>
-<li><p><code>nginx -c ngnx-1.7.11.3-Gryphon\conf\nginx-win-rtmp.conf</code></p>
+<li><p><code>nginx -c D:\ngnx-1.7.11.3-Gryphon\ngnx-1.7.11.3-Gryphon\conf\nginx-win-rtmp.conf</code></p>
 </li>
 <li><p>这时候打开任务管理器就可以看到有 <code>nginx.exe</code> 这个进程，或者是打开浏览器输入 <code>localhost:8080</code></p>
 <p>看到nginx默认首页，都说明已经开启了。</p>
