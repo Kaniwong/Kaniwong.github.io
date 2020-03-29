@@ -1,12 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()</title>
+    <url>/2020/03/29/%E5%90%AF%E5%8A%A8nginx%E6%97%B6%E4%B8%80%E9%97%AA%E8%80%8C%E8%BF%87%E5%B9%B6%E6%8A%A5%E9%94%99CreateFile-%E6%88%96%E8%80%85CreateDirectory/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在windows的 <code>cmd</code> 中启动 <code>nginx</code> 时一闪而过，还出现了下图的报错，直接运行 <code>nginx.exe</code> 也只有闪一下。</p>
+<p><img src="/images/WechatIMG120.png" alt=""></p>
+<p>在任务管理器中也没有看到 <code>nginx.exe</code> 。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>首先想到的是端口被占用了，通过查询端口和nginx配置文件后发现并不是。查了下网上基本都是说端口占用和手动创建文件的，试过后并没有解决这个问题。<a id="more"></a></p>
+<p>查看 <code>error.log</code> 也没有其他报错。</p>
+<p>也觉得会不会是权限不够，所以给了nginx目录777，还是不对。</p>
+<p>最后发现是需要在nginx根目录下执行才行，晕，明明环境变量都加了，不过解决了就好。</p>
+<p><img src="/images/WechatIMG120.png" alt=""></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>在cmd中cd到nginx.exe同级目录再执行，就可以了。</p>
+]]></content>
+      <categories>
+        <category>nginx</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+        <tag>报错</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web端实现rtsp播放</title>
+    <url>/2020/03/29/web%E7%AB%AF%E5%AE%9E%E7%8E%B0rtsp%E6%92%AD%E6%94%BE/</url>
+    <content><![CDATA[<p>在web端实现rtsp流播放的方法有好几种，网上也有不少归纳总结的很好的文章，这里就只说下我个人平时项目上使用到最多和觉得较好的两种。<s>最重要都是免费，嘻嘻</s>。</p>
+<h1 id="Streamedian"><a href="#Streamedian" class="headerlink" title="Streamedian"></a>Streamedian</h1><p>在没有特殊情况下的话推荐直接使用 <a href="https://streamedian.com/" target="_blank" rel="noopener">streamedian</a>，简单粗暴。</p>
+<h2 id="安装-amp-使用"><a href="#安装-amp-使用" class="headerlink" title="安装 &amp; 使用"></a>安装 &amp; 使用</h2><p>使用streamedian需要下载js库和代理服务器，选择自己所用的开发系统下载安装即可。<a id="more"></a></p>
+<p><img src="/images/QQ20200329-094223.png" alt=""></p>
+<p>安装完成后打开应用后会在浏览器中弹出如下图的页面，说明就已经成功了（没错！就是这么简单）。</p>
+<p><img src="/images/QQ20200329-094830.png" alt=""></p>
+<p>接下来你要做的就是拼接 <code>rtsp</code> 地址，每个供应商的拼接方法多少会有点不一样，所以具体情况请根据对应的开发文档灵活变通下。这里也列出我常用的两种：</p>
+<p><strong>大华</strong>：rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/cam/realmonitor?channel=1&amp;subtype=0（这里的参数请参考大华提供的开发文档，如果没特殊需求可以不用做更改直接使用）</p>
+<p><strong>霍尼韦尔</strong>：rtsp://<code>username</code>:<code>password</code>@1<code>ip</code>:554/h264</p>
+<p>点击 <code>set</code> ，不出意外就可以看到画面了。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><strong>白嫖是有极限的！</strong></p>
+<ul>
+<li>只能同时打开两个流视频</li>
+<li>只支持内网</li>
+</ul>
+<p>不过问题也不大，他们也有提供付费版本供你选择。</p>
+<p><img src="/images/chongqianjiunengjiejue.jpeg" alt=""></p>
+<h1 id="FFmpeg-Nginx"><a href="#FFmpeg-Nginx" class="headerlink" title="FFmpeg + Nginx"></a>FFmpeg + Nginx</h1><p>本来一直使用streamedian都没什么问题，直到在一个项目上突然掉坑里爬不出来，链接只能是localhost，只要写服务器ip就会被认定是外网。</p>
+<p><img src="/images/1513758710130558.jpg" alt=""></p>
+<p>Google+百度都找不到这样的栗子，明明其他项目都是这么走过来的，网络也没有问题，ip也是对的，nginx配置也是对的……（感觉头发又掉了几根T^T）</p>
+<p>总不能一直在这个问题上纠结下去<s>（客户在催了）</s>，只好换种方式来搞。</p>
+<p>这种方法原理是通过 <code>ffmepg</code> 将 <code>rtsp</code> 转码成为 <code>rtmp</code> ，再通过 <code>nginx</code> 反代来实现的。</p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>不同的系统可能会有差异，不过思路是相通的，这里我用的是Windows10。</p>
+<h2 id="FFmpeg"><a href="#FFmpeg" class="headerlink" title="FFmpeg"></a>FFmpeg</h2><ul>
+<li><p>首先需要到官网下载 <a href="ffmpeg.org/download.html">ffmpeg.org/download.html</a></p>
+</li>
+<li><p>下载完之后解压到哪个盘都行，记住路径就行，因为下一步要用到。</p>
+</li>
+<li><p>右击我的电脑图标——选择属性，选择高级系统设置命令，然后在弹出的窗口中选择环境变量。</p>
+</li>
+<li><p>找到 <code>Path</code> ,选中编辑。（如果没有直接新建一个即可）</p>
+<p><img src="/images/WechatIMG119.png" alt=""></p>
+</li>
+<li><p>新建一个环境变量，这里的路径填入第二步你解压的ffmpeg文件夹路径下的 <code>bin</code> 文件夹。</p>
+<p><img src="/images/WechatIMG117.png" alt=""></p>
+</li>
+<li><p>最后在 <code>cmd</code> 中输入指令 <code>ffmpeg -version</code> ，如果出现如下图的内容，就说明已经安装完成。</p>
+<p><img src="/images/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTgwMTMxMTc1MjQ2NTA0.jpeg" alt=""></p>
+</li>
+</ul>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ul>
+<li><p>同样你需要先下载 <a href="http://nginx-win.ecsds.eu/download/nginx%201.7.11.3%20Gryphon.zip" target="_blank" rel="noopener">nginx 1.7.11.3 Gryphon.zip</a></p>
+</li>
+<li><p>解压</p>
+</li>
+<li><p>进入到解压后的文件夹中，打开 conf ，复制 <code>nginx-win.conf</code> 并重命名为  <code>nginx-win-rtmp.conf</code> 。</p>
+</li>
+<li><p>打开  <code>nginx-win-rtmp.conf</code> ，在文件的最末端添加以下配置信息，保存。</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设定rtmp服务器，实现推流</span></span><br><span class="line">rtmp&#123;</span><br><span class="line">	server&#123;</span><br><span class="line">		<span class="attribute">listen</span> <span class="number">1935</span>;</span><br><span class="line">		<span class="attribute">application</span> live&#123;</span><br><span class="line">			<span class="attribute">live</span> <span class="literal">on</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开  <code>cmd</code> ，依次输入指令（进入到nginx跟目录，指定配置文件启动nginx）</p>
+<ul>
+<li><p><code>cd D:\ngnx-1.7.11.3-Gryphon</code> </p>
+</li>
+<li><p><code>d:</code></p>
+</li>
+<li><p><code>nginx -c ngnx-1.7.11.3-Gryphon\conf\nginx-win-rtmp.conf</code></p>
+</li>
+<li><p>这时候打开任务管理器就可以看到有 <code>nginx.exe</code> 这个进程，或者是打开浏览器输入 <code>localhost:8080</code></p>
+<p>看到nginx默认首页，都说明已经开启了。</p>
+<p><img src="/images/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTgwMjA3MTE0MTIyNDQw.jpeg" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="转码"><a href="#转码" class="headerlink" title="转码"></a>转码</h1><ul>
+<li><p>打开 <code>cmd</code> ，同时确保 nginx 是开启的</p>
+</li>
+<li><p>输入指令 <code>ffmpeg -i &quot;rtsp://username:password@ip:554/cam/realmonitor?channel=1&amp;subtype=0&quot; -f mp4 -vcodec copy -r $framerate -s $framewh -b:v $bitrate  -an -f flv &quot;rtmp://localhost:1935/live/&quot;</code> （这里rtmp链接的localhost可以换成ip地址）</p>
+</li>
+<li><p>回车后你就会看到以下内容</p>
+<p><img src="/images/WX20200329-173215.png" alt=""></p>
+</li>
+<li><p>到这里就全部完成了，通过 <code>rtmp://localhost:1935/live/</code> 这个链接就可以看到转码后的视频了。</p>
+<ul>
+<li>可以通过vlc查看</li>
+<li>也可以通过 <code>video.js</code> 来直接在Web页面进行播放</li>
+</ul>
+</li>
+</ul>
+<h1 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
+<li>这里的 <code>rtsp</code> 链接请根据实际开发来填写</li>
+<li><code>rtmp</code> 的端口号需要跟 <code>nginx-win-rtmp.conf</code> 保持一致，如果不熟练的可以直接使用跟文章相同的配置。</li>
+<li>这个方法的缺点很明显，切换播放源的时候特慢，需要等待4-6秒那样子，画面延迟在1.5-2秒左右。</li>
+<li>切换播放源的时候需要先 kill 掉 <code>nginx</code> 服务，再执行一遍转码的步骤，所以导致了切换速度感人。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>rtsp</category>
+      </categories>
+      <tags>
+        <tag>rtsp</tag>
+        <tag>ffmpeg</tag>
+        <tag>streamedian</tag>
+        <tag>rtmp</tag>
+        <tag>nginx</tag>
+        <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo next主题链接带有%20</title>
     <url>/2020/03/28/hexo-next%E4%B8%BB%E9%A2%98%E9%93%BE%E6%8E%A5%E5%B8%A6%E6%9C%89-20/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用上next主题以后，在本地运行起来发现链接后面都带有一个 <code>%20</code> ，导致了跳转过后都直接404了。</p>
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>默认的主题并没有这个问题，所以可能是next主题自带的bug。</p>
 <p>打开主题的配置文件  <code>/themes/next/_config.yml</code> ，直接<code>Ctrl+F</code> 查找 <code>menu</code> ，通过比对两个主题的区别可以发现next主题每一个链接后面都有空格，所以猜想是这个原因导致了，修改过后果然就行了。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>去除掉链接后面的空格即可</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>去除掉链接后面的空格即可<a id="more"></a></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /||home</span><br><span class="line">  about: /about/||user</span><br><span class="line">  tags: /tags/||tags</span><br><span class="line">  categories: /categories/||th</span><br><span class="line">  archives: /archives/|| archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure>
 
 ]]></content>
@@ -24,7 +147,7 @@
     <url>/2020/03/28/hexo-g-%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>初始化好了我的hexo博客之后打算跟github仓库关联起来，于是填好了相关信息后往下执行，结果不管输入什么hexo指令都会报以下错误</p>
 <p><img src="/images/QQ20200328-211206.png" alt=""></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>网上查找资料后发现是因为配置文件格式上要求<code>：</code>后要有空格，而我没按照格式来，所以才会报错</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>网上查找资料后发现是因为配置文件格式上要求<code>：</code>后要有空格，而我没按照格式来，所以才会报错<a id="more"></a></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:git</span><br><span class="line">  repo:https://github.com/Kaniwong/Kaniwong.github.io</span><br><span class="line">  branch:master</span><br></pre></td></tr></table></figure>
 
 
@@ -38,13 +161,14 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+        <tag>报错</tag>
       </tags>
   </entry>
   <entry>
     <title>Centos 8 firewalld 无法重启</title>
     <url>/2020/03/28/Centos-8-firewalld-%E6%97%A0%E6%B3%95%E9%87%8D%E5%90%AF/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在学习Linux的过程中，使用systemctl stop firewalld 指令后想再开启，发现firewalld并没有正常开启，并提示 <strong>“Job for firewalld.service failed because a timeout was exceeded. See “systemctl status firewalld.service” and “journalctl -xe” for details.”</strong></p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>通过指令<code>ps -ef | grep firewall</code> 可以发现，在已经关闭了的情况下，仍然有一个firewalld进程存在</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>通过指令<code>ps -ef | grep firewall</code> 可以发现，在已经关闭了的情况下，仍然有一个firewalld进程存在<a id="more"></a></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>用 <code>kill -f firewalld</code> 把进程给kill掉，之后 <code>systemctl start firewalld</code> 就可以顺利开启了。</p>
 ]]></content>
       <categories>
