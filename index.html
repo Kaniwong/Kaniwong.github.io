@@ -967,7 +967,7 @@
 
       
         
-          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在学习Linux的过程中，使用systemctl stop firewalld 指令后想再开启，发现firewalld并没有正常开启，并提示 <strong>“Job for firewalld.service failed because a timeout was exceeded. See “systemctl status firewalld.service” and “journalctl -xe” for details.”</strong></p>
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用systemctl stop firewalld 指令后想再开启，发现firewalld并没有正常开启，并提示 <strong>“Job for firewalld.service failed because a timeout was exceeded. See “systemctl status firewalld.service” and “journalctl -xe” for details.”</strong></p>
 <h2 id="排错-原因"><a href="#排错-原因" class="headerlink" title="排错/原因"></a>排错/原因</h2><p>通过指令<code>ps -ef | grep firewall</code> 可以发现，在已经关闭了的情况下，仍然有一个firewalld进程存在
           <!--noindex-->
           <div class="post-button text-center">
