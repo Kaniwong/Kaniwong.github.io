@@ -2,12 +2,12 @@
 <search>
   <entry>
     <title>Centos8编译安装LNMP</title>
-    <url>/2020/04/01/Centos8%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85LNMP/</url>
-    <content><![CDATA[<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在开始安装之前nginx，我们需要先安装gcc,openssl,pcre,zlib等几个模块。</p>
+    <url>/archives/ab917446.html</url>
+    <content><![CDATA[<h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在开始安装之前nginx，我们需要先安装gcc,openssl,pcre,zlib等几个模块。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install gcc openssl-devel pcre-devel zlib-devel -y</span><br></pre></td></tr></table></figure>
 
 <h3 id="下载nginx"><a href="#下载nginx" class="headerlink" title="下载nginx"></a>下载nginx</h3><ul>
-<li><p>进入官网下载页面 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a> ，选择一个版本，右键-&gt;复制链接</p>
+<li><p>进入官网下载页面 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a> ，选择一个版本，右键-&gt;复制链接<a id="more"></a></p>
 </li>
 <li><p>运行wget指令下载nginx包</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
@@ -16,9 +16,9 @@
 </ul>
 <h3 id="添加运行用户"><a href="#添加运行用户" class="headerlink" title="添加运行用户"></a>添加运行用户</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groupadd -r nginx </span><br><span class="line">useradd -r -g nginx -s &#x2F;sbin&#x2F;nologin -M nginx</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><h4 id="解压、进入nginx根目录"><a href="#解压、进入nginx根目录" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf nginx-1.16.1.tar.gz</span><br><span class="line">cd nginx-1.16.1&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入nginx根目录"><a href="#解压、进入nginx根目录" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf nginx-1.16.1.tar.gz</span><br><span class="line">cd nginx-1.16.1&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>–user=nginx     # 设置用户名</li>
@@ -29,14 +29,14 @@
 <li>–with-http_realip_module   # 允许改变客户端请求头中X-Real-IP 或 X-Forwarded-For等, 可用于记录客户IP</li>
 <li>–with-http_gzip_static_module   # nginx默认安装ngx_http_gzip_module,采用的是chunked方式的动态压缩，静态压缩需要使用http_gzip_static_module这个模块，进行pre-compress。模块 ngx_http_gzip_static_module 允许发送以“.gz”作为文件扩展名的预压缩文件，以替代发送普通文件。</li>
 </ul>
-<h4 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <p>可能在这一步会出现提示：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bash: make: command not found...</span><br><span class="line">Install package &#39;make&#39; to provide command &#39;make&#39;? [N&#x2F;y]</span><br></pre></td></tr></table></figure>
 
 <p>如果 <code>y</code> 继续往下执行即可，等待安装结束后就继续执行 <code>make &amp;&amp; make install</code> 进行编译安装了。</p>
 <p>如果一切没问题，那么恭喜你，安装完毕！</p>
-<h4 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h4><p>构建nginx的启动服务脚本，新建nginx文件</p>
+<h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><p>构建nginx的启动服务脚本，新建nginx文件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;rc.d&#x2F;init.d&#x2F;nginx</span><br></pre></td></tr></table></figure>
 
 <p>将以下内容复制到该文件中</p>
@@ -54,7 +54,7 @@
 <p>启动nginx</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin </span><br><span class="line">.&#x2F;nginx &#x2F;&#x2F;启动nginx</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>此时你可能想查看下nginx的版本，哒哒哒， <code>nginx -v</code> 然后就报错了……</p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>此时你可能想查看下nginx的版本，哒哒哒， <code>nginx -v</code> 然后就报错了……</p>
 <p><img src="/images/QQ20200401-213326.png" alt="bash: nginx: command not found..."></p>
 <p>当然，我们肯定是百分百确定自己有安装了nginx的，正确的打开方式应该是</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin </span><br><span class="line">.&#x2F;nginx -v</span><br></pre></td></tr></table></figure>
@@ -70,13 +70,13 @@
 </li>
 </ul>
 <p>到这里 <code>nginx</code> 的部分就算搞定了。</p>
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><h2 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载PHP"><a href="#下载PHP" class="headerlink" title="下载PHP"></a>下载PHP</h3><ul>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><h2 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载PHP"><a href="#下载PHP" class="headerlink" title="下载PHP"></a>下载PHP</h3><ul>
 <li>进入官网下载页面  <a href="https://www.php.net/downloads.php" target="_blank" rel="noopener">https://www.php.net/downloads.php</a>，选择一个版本，右键-&gt;复制链接</li>
 <li>运行wget指令下载php包</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;cn2.php.net&#x2F;distributions&#x2F;php-7.2.6.tar.gz</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译安装-2"><a href="#编译安装-2" class="headerlink" title="编译安装"></a>编译安装</h3><h4 id="解压、进入php根目录"><a href="#解压、进入php根目录" class="headerlink" title="解压、进入php根目录"></a>解压、进入php根目录</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -zxvf php-7.2.6.tar.gz</span><br><span class="line">cd php-7.2.6&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装-2"><a href="#编译安装-2" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入php根目录"><a href="#解压、进入php根目录" class="headerlink" title="解压、进入php根目录"></a>解压、进入php根目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar -zxvf php-7.2.6.tar.gz</span><br><span class="line">cd php-7.2.6&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php7 --with-config-file-path&#x3D;&#x2F;usr&#x2F;local&#x2F;php7 --enable-sockets --enable-fpm --enable-cli --enable-mbstring --enable-pcntl --enable-soap --enable-opcache --disable-fileinfo --disable-rpath --with-mysqli --with-pdo-mysql --with-iconv-dir --with-openssl --with-fpm-user&#x3D;nginx --with-fpm-group&#x3D;nginx --with-curl --with-mhash --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-zip --with-zlib --enable-simplexml --with-libxml-dir</span><br></pre></td></tr></table></figure>
 
@@ -130,9 +130,9 @@
 
 </li>
 </ul>
-<h4 id="编译安装-3"><a href="#编译安装-3" class="headerlink" title="编译安装"></a>编译安装</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装-3"><a href="#编译安装-3" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置PHP"><a href="#配置PHP" class="headerlink" title="配置PHP"></a>配置PHP</h4><ul>
+<h2 id="配置PHP"><a href="#配置PHP" class="headerlink" title="配置PHP"></a>配置PHP</h2><ul>
 <li><p>移动php配置文件的位置并修改名，为php-fpm提供配置文件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php7&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;php7&#x2F;etc&#x2F;php-fpm.conf</span><br></pre></td></tr></table></figure>
 </li>
@@ -150,7 +150,7 @@
 
 </li>
 </ul>
-<h4 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>同样的我们需要将 <code>php-fpm</code> 的路径配置到系统变量中。</p>
+<h3 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>同样的我们需要将 <code>php-fpm</code> 的路径配置到系统变量中。</p>
 <ul>
 <li><p>修改配置文件 <code>vim /etc/profile</code> 。</p>
 </li>
@@ -160,10 +160,10 @@
 <li><p>最后再执行 <code>source /etc/profile</code> ，保存配置</p>
 </li>
 </ul>
-<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php-fpm start</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php-fpm start</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/QQ20200402-131657.png" alt="php-fpm start"></p>
-<h4 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+<h3 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
 
 <p>找到 <code>location /</code> ，在下图位置插入 <code>index.php</code></p>
 <p><img src="/images/QQ20200402-191820.png" alt=""></p>
@@ -172,7 +172,7 @@
 <p>保存退出，并重新加载nginx配置文件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
-<h4 id="编写php测试页"><a href="#编写php测试页" class="headerlink" title="编写php测试页"></a>编写php测试页</h4><ul>
+<h2 id="编写php测试页"><a href="#编写php测试页" class="headerlink" title="编写php测试页"></a>编写php测试页</h2><ul>
 <li><p>创建并编辑index.php</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;index.php</span><br></pre></td></tr></table></figure>
 </li>
@@ -183,7 +183,37 @@
 </ul>
 <p>这时候在浏览器输入ip，出现以下页面就完成了。</p>
 <p><img src="/images/QQ20200402-202818.png" alt="phpinfo"></p>
-<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2>]]></content>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="准备工作-2"><a href="#准备工作-2" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="卸载系统自带的mariadb"><a href="#卸载系统自带的mariadb" class="headerlink" title="卸载系统自带的mariadb"></a>卸载系统自带的mariadb</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y remove mariadb* boost-*</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装依赖-1"><a href="#安装依赖-1" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y cmake make gcc gcc-c++ bison ncurses ncurses-devel</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h3><ul>
+<li><p>进入官网下载页面  <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a> </p>
+<ul>
+<li>选择 <code>Source Code</code> </li>
+</ul>
+<p><img src="/images/QQ20200402-214441.png" alt="选择 Source Code"></p>
+<ul>
+<li>找到集成 <code>boost</code> 的包，点击 <code>Download</code> 前往下载页面</li>
+</ul>
+<p><img src="/images/QQ20200402-214521.png" alt="mysql download page"></p>
+<ul>
+<li>右键-&gt;复制链接</li>
+</ul>
+<p><img src="/images/QQ20200402-215156.png" alt="复制链接"></p>
+</li>
+<li><p>运行wget指令下载php包</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-boost-8.0.19.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加运行用户-1"><a href="#添加运行用户-1" class="headerlink" title="添加运行用户"></a>添加运行用户</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">useradd -M -s &#x2F;sbin&#x2F;nologin -r mysql</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译安装-4"><a href="#编译安装-4" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入nginx根目录-1"><a href="#解压、进入nginx根目录-1" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf mysql-boost-8.0.19.tar.gz</span><br><span class="line">cd mysql-boost-8.0.19&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-2"><a href="#配置-2" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -196,7 +226,7 @@
   </entry>
   <entry>
     <title>启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()</title>
-    <url>/2020/03/29/%E5%90%AF%E5%8A%A8nginx%E6%97%B6%E4%B8%80%E9%97%AA%E8%80%8C%E8%BF%87%E5%B9%B6%E6%8A%A5%E9%94%99CreateFile-%E6%88%96%E8%80%85CreateDirectory/</url>
+    <url>/archives/e2fc7097.html</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在windows的 <code>cmd</code> 中启动 <code>nginx</code> 时一闪而过，还出现了下图的报错，直接运行 <code>nginx.exe</code> 也只有闪一下。</p>
 <p><img src="/images/WechatIMG120.png" alt=""></p>
 <p>在任务管理器中也没有看到 <code>nginx.exe</code> 。</p>
@@ -218,7 +248,7 @@
   </entry>
   <entry>
     <title>web端实现rtsp播放</title>
-    <url>/2020/03/29/web%E7%AB%AF%E5%AE%9E%E7%8E%B0rtsp%E6%92%AD%E6%94%BE/</url>
+    <url>/archives/4fe5484.html</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在web端实现rtsp流播放的方法有好几种，网上也有不少归纳总结的很好的文章，这里就只说下我个人平时项目上使用到最多和觉得较好的两种。<s>最重要都是免费，嘻嘻</s>。</p>
 <h1 id="Streamedian"><a href="#Streamedian" class="headerlink" title="Streamedian"></a>Streamedian</h1><p>在没有特殊情况下的话推荐直接使用 <a href="https://streamedian.com/" target="_blank" rel="noopener">streamedian</a>，简单粗暴。</p>
 <h2 id="安装-amp-使用"><a href="#安装-amp-使用" class="headerlink" title="安装 &amp; 使用"></a>安装 &amp; 使用</h2><p>使用streamedian需要下载js库和代理服务器，选择自己所用的开发系统下载安装即可。<a id="more"></a></p>
@@ -322,7 +352,7 @@
   </entry>
   <entry>
     <title>hexo next主题链接带有%20</title>
-    <url>/2020/03/28/hexo-next%E4%B8%BB%E9%A2%98%E9%93%BE%E6%8E%A5%E5%B8%A6%E6%9C%89-20/</url>
+    <url>/archives/b594f684.html</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用上next主题以后，在本地运行起来发现链接后面都带有一个 <code>%20</code> ，导致了跳转过后都直接404了。</p>
 <h2 id="排错-原因"><a href="#排错-原因" class="headerlink" title="排错/原因"></a>排错/原因</h2><p>默认的主题并没有这个问题，所以可能是next主题自带的bug。</p>
 <p>打开主题的配置文件  <code>/themes/next/_config.yml</code> ，直接<code>Ctrl+F</code> 查找 <code>menu</code> ，通过比对两个主题的区别可以发现next主题每一个链接后面都有空格，所以猜想是这个原因导致了，修改过后果然就行了。</p>
@@ -341,7 +371,7 @@
   </entry>
   <entry>
     <title>hexo 报错 FATAL can not read a block mapping entry; a multiline key may not be an implicit key at line 103, column 16</title>
-    <url>/2020/03/28/hexo-g-%E6%8A%A5%E9%94%99/</url>
+    <url>/archives/8fb5d5d3.html</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>初始化好了我的hexo博客之后打算跟github仓库关联起来，于是填好了相关信息后往下执行，结果不管输入什么hexo指令都会报以下错误</p>
 <p><img src="/images/QQ20200328-211206.png" alt=""></p>
 <h2 id="排错-原因"><a href="#排错-原因" class="headerlink" title="排错/原因"></a>排错/原因</h2><p>网上查找资料后发现是因为配置文件格式上要求<code>：</code>后要有空格，而我没按照格式来，所以才会报错<a id="more"></a></p>
@@ -363,7 +393,7 @@
   </entry>
   <entry>
     <title>Centos 8 firewalld 无法重启</title>
-    <url>/2020/03/28/Centos-8-firewalld-%E6%97%A0%E6%B3%95%E9%87%8D%E5%90%AF/</url>
+    <url>/archives/5944d7b4.html</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用systemctl stop firewalld 指令后想再开启，发现firewalld并没有正常开启，并提示 <strong>“Job for firewalld.service failed because a timeout was exceeded. See “systemctl status firewalld.service” and “journalctl -xe” for details.”</strong></p>
 <h2 id="排错-原因"><a href="#排错-原因" class="headerlink" title="排错/原因"></a>排错/原因</h2><p>通过指令<code>ps -ef | grep firewall</code> 可以发现，在已经关闭了的情况下，仍然有一个firewalld进程存在<a id="more"></a></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>用 <code>kill -f firewalld</code> 把进程给kill掉，之后 <code>systemctl start firewalld</code> 就可以顺利开启了。</p>

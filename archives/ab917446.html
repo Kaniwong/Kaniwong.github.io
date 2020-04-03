@@ -84,12 +84,12 @@
 
 <meta name="description" content="一叶帆舟，在这记录分享日常写代码所遇到的问题，方便自己查阅回顾，也希望能帮助遇到相同问题的你。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://kaniwong.github.io/tags/index.html">
+<meta property="og:title" content="文章分类">
+<meta property="og:url" content="https://kaniwong.github.io/categories/index.html">
 <meta property="og:site_name" content="一叶帆舟">
 <meta property="og:description" content="一叶帆舟，在这记录分享日常写代码所遇到的问题，方便自己查阅回顾，也希望能帮助遇到相同问题的你。">
-<meta property="article:published_time" content="2020-03-28T10:35:00.000Z">
-<meta property="article:modified_time" content="2020-03-28T11:04:29.639Z">
+<meta property="article:published_time" content="2020-03-28T10:07:16.000Z">
+<meta property="article:modified_time" content="2020-03-28T11:04:17.686Z">
 <meta property="article:author" content="Kani wong">
 <meta property="article:tag" content="一叶帆舟-kaniwong-kani-php-Laravel-Linux-MySql-hexo-Blog-博客">
 <meta name="twitter:card" content="summary">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://kaniwong.github.io/tags/"/>
+  <link rel="canonical" href="https://kaniwong.github.io/categories/"/>
 
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kaniwong.github.io/2020/04/01/Centos8%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85LNMP/">
+    <link itemprop="mainEntityOfPage" href="https://kaniwong.github.io/archives/ab917446.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kani wong">
@@ -364,10 +364,6 @@
           
 
           
-              <div class="post-description">
-                  基于Centos8源码编译安装LNMP
-              </div>
-          
 
         </div>
       </header>
@@ -382,11 +378,11 @@
       
 
       
-        <h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在开始安装之前nginx，我们需要先安装gcc,openssl,pcre,zlib等几个模块。</p>
+        <h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>在开始安装之前nginx，我们需要先安装gcc,openssl,pcre,zlib等几个模块。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc openssl-devel pcre-devel zlib-devel -y</span><br></pre></td></tr></table></figure>
 
 <h3 id="下载nginx"><a href="#下载nginx" class="headerlink" title="下载nginx"></a>下载nginx</h3><ul>
-<li><p>进入官网下载页面 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a> ，选择一个版本，右键-&gt;复制链接</p>
+<li><p>进入官网下载页面 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a> ，选择一个版本，右键-&gt;复制链接<a id="more"></a></p>
 </li>
 <li><p>运行wget指令下载nginx包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
@@ -395,9 +391,9 @@
 </ul>
 <h3 id="添加运行用户"><a href="#添加运行用户" class="headerlink" title="添加运行用户"></a>添加运行用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd -r nginx </span><br><span class="line">useradd -r -g nginx -s &#x2F;sbin&#x2F;nologin -M nginx</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><h4 id="解压、进入nginx根目录"><a href="#解压、进入nginx根目录" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf nginx-1.16.1.tar.gz</span><br><span class="line">cd nginx-1.16.1&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入nginx根目录"><a href="#解压、进入nginx根目录" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf nginx-1.16.1.tar.gz</span><br><span class="line">cd nginx-1.16.1&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>–user=nginx     # 设置用户名</li>
@@ -408,14 +404,14 @@
 <li>–with-http_realip_module   # 允许改变客户端请求头中X-Real-IP 或 X-Forwarded-For等, 可用于记录客户IP</li>
 <li>–with-http_gzip_static_module   # nginx默认安装ngx_http_gzip_module,采用的是chunked方式的动态压缩，静态压缩需要使用http_gzip_static_module这个模块，进行pre-compress。模块 ngx_http_gzip_static_module 允许发送以“.gz”作为文件扩展名的预压缩文件，以替代发送普通文件。</li>
 </ul>
-<h4 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装-1"><a href="#编译安装-1" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <p>可能在这一步会出现提示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash: make: command not found...</span><br><span class="line">Install package &#39;make&#39; to provide command &#39;make&#39;? [N&#x2F;y]</span><br></pre></td></tr></table></figure>
 
 <p>如果 <code>y</code> 继续往下执行即可，等待安装结束后就继续执行 <code>make &amp;&amp; make install</code> 进行编译安装了。</p>
 <p>如果一切没问题，那么恭喜你，安装完毕！</p>
-<h4 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h4><p>构建nginx的启动服务脚本，新建nginx文件</p>
+<h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><p>构建nginx的启动服务脚本，新建nginx文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;rc.d&#x2F;init.d&#x2F;nginx</span><br></pre></td></tr></table></figure>
 
 <p>将以下内容复制到该文件中</p>
@@ -433,7 +429,7 @@
 <p>启动nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin </span><br><span class="line">.&#x2F;nginx &#x2F;&#x2F;启动nginx</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>此时你可能想查看下nginx的版本，哒哒哒， <code>nginx -v</code> 然后就报错了……</p>
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>此时你可能想查看下nginx的版本，哒哒哒， <code>nginx -v</code> 然后就报错了……</p>
 <p><img src="/images/QQ20200401-213326.png" alt="bash: nginx: command not found..."></p>
 <p>当然，我们肯定是百分百确定自己有安装了nginx的，正确的打开方式应该是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin </span><br><span class="line">.&#x2F;nginx -v</span><br></pre></td></tr></table></figure>
@@ -449,13 +445,13 @@
 </li>
 </ul>
 <p>到这里 <code>nginx</code> 的部分就算搞定了。</p>
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><h2 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载PHP"><a href="#下载PHP" class="headerlink" title="下载PHP"></a>下载PHP</h3><ul>
+<h1 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h1><h2 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载PHP"><a href="#下载PHP" class="headerlink" title="下载PHP"></a>下载PHP</h3><ul>
 <li>进入官网下载页面  <a href="https://www.php.net/downloads.php" target="_blank" rel="noopener">https://www.php.net/downloads.php</a>，选择一个版本，右键-&gt;复制链接</li>
 <li>运行wget指令下载php包</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;cn2.php.net&#x2F;distributions&#x2F;php-7.2.6.tar.gz</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译安装-2"><a href="#编译安装-2" class="headerlink" title="编译安装"></a>编译安装</h3><h4 id="解压、进入php根目录"><a href="#解压、进入php根目录" class="headerlink" title="解压、进入php根目录"></a>解压、进入php根目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php-7.2.6.tar.gz</span><br><span class="line">cd php-7.2.6&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="编译安装-2"><a href="#编译安装-2" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入php根目录"><a href="#解压、进入php根目录" class="headerlink" title="解压、进入php根目录"></a>解压、进入php根目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php-7.2.6.tar.gz</span><br><span class="line">cd php-7.2.6&#x2F;</span><br></pre></td></tr></table></figure>
 
 <h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;php7 --with-config-file-path&#x3D;&#x2F;usr&#x2F;local&#x2F;php7 --enable-sockets --enable-fpm --enable-cli --enable-mbstring --enable-pcntl --enable-soap --enable-opcache --disable-fileinfo --disable-rpath --with-mysqli --with-pdo-mysql --with-iconv-dir --with-openssl --with-fpm-user&#x3D;nginx --with-fpm-group&#x3D;nginx --with-curl --with-mhash --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --enable-zip --with-zlib --enable-simplexml --with-libxml-dir</span><br></pre></td></tr></table></figure>
 
@@ -509,9 +505,9 @@
 
 </li>
 </ul>
-<h4 id="编译安装-3"><a href="#编译安装-3" class="headerlink" title="编译安装"></a>编译安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装-3"><a href="#编译安装-3" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置PHP"><a href="#配置PHP" class="headerlink" title="配置PHP"></a>配置PHP</h4><ul>
+<h2 id="配置PHP"><a href="#配置PHP" class="headerlink" title="配置PHP"></a>配置PHP</h2><ul>
 <li><p>移动php配置文件的位置并修改名，为php-fpm提供配置文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;usr&#x2F;local&#x2F;php7&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf.default &#x2F;usr&#x2F;local&#x2F;php7&#x2F;etc&#x2F;php-fpm.conf</span><br></pre></td></tr></table></figure>
 </li>
@@ -529,7 +525,7 @@
 
 </li>
 </ul>
-<h4 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><p>同样的我们需要将 <code>php-fpm</code> 的路径配置到系统变量中。</p>
+<h3 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>同样的我们需要将 <code>php-fpm</code> 的路径配置到系统变量中。</p>
 <ul>
 <li><p>修改配置文件 <code>vim /etc/profile</code> 。</p>
 </li>
@@ -539,10 +535,10 @@
 <li><p>最后再执行 <code>source /etc/profile</code> ，保存配置</p>
 </li>
 </ul>
-<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php-fpm start</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php-fpm start</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/QQ20200402-131657.png" alt="php-fpm start"></p>
-<h4 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+<h3 id="修改nginx配置"><a href="#修改nginx配置" class="headerlink" title="修改nginx配置"></a>修改nginx配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
 
 <p>找到 <code>location /</code> ，在下图位置插入 <code>index.php</code></p>
 <p><img src="/images/QQ20200402-191820.png" alt=""></p>
@@ -551,7 +547,7 @@
 <p>保存退出，并重新加载nginx配置文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
-<h4 id="编写php测试页"><a href="#编写php测试页" class="headerlink" title="编写php测试页"></a>编写php测试页</h4><ul>
+<h2 id="编写php测试页"><a href="#编写php测试页" class="headerlink" title="编写php测试页"></a>编写php测试页</h2><ul>
 <li><p>创建并编辑index.php</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;html&#x2F;index.php</span><br></pre></td></tr></table></figure>
 </li>
@@ -562,7 +558,37 @@
 </ul>
 <p>这时候在浏览器输入ip，出现以下页面就完成了。</p>
 <p><img src="/images/QQ20200402-202818.png" alt="phpinfo"></p>
-<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="准备工作-2"><a href="#准备工作-2" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="卸载系统自带的mariadb"><a href="#卸载系统自带的mariadb" class="headerlink" title="卸载系统自带的mariadb"></a>卸载系统自带的mariadb</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove mariadb* boost-*</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装依赖-1"><a href="#安装依赖-1" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y cmake make gcc gcc-c++ bison ncurses ncurses-devel</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载MySQL"><a href="#下载MySQL" class="headerlink" title="下载MySQL"></a>下载MySQL</h3><ul>
+<li><p>进入官网下载页面  <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a> </p>
+<ul>
+<li>选择 <code>Source Code</code> </li>
+</ul>
+<p><img src="/images/QQ20200402-214441.png" alt="选择 Source Code"></p>
+<ul>
+<li>找到集成 <code>boost</code> 的包，点击 <code>Download</code> 前往下载页面</li>
+</ul>
+<p><img src="/images/QQ20200402-214521.png" alt="mysql download page"></p>
+<ul>
+<li>右键-&gt;复制链接</li>
+</ul>
+<p><img src="/images/QQ20200402-215156.png" alt="复制链接"></p>
+</li>
+<li><p>运行wget指令下载php包</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;Downloads&#x2F;MySQL-8.0&#x2F;mysql-boost-8.0.19.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加运行用户-1"><a href="#添加运行用户-1" class="headerlink" title="添加运行用户"></a>添加运行用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -M -s &#x2F;sbin&#x2F;nologin -r mysql</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译安装-4"><a href="#编译安装-4" class="headerlink" title="编译安装"></a>编译安装</h2><h3 id="解压、进入nginx根目录-1"><a href="#解压、进入nginx根目录-1" class="headerlink" title="解压、进入nginx根目录"></a>解压、进入nginx根目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf mysql-boost-8.0.19.tar.gz</span><br><span class="line">cd mysql-boost-8.0.19&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-2"><a href="#配置-2" class="headerlink" title="配置"></a>配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;configure --user&#x3D;nginx \</span><br><span class="line">            --group&#x3D;nginx \</span><br><span class="line">            --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx  \</span><br><span class="line">            --with-http_stub_status_module \</span><br><span class="line">            --with-http_ssl_module \</span><br><span class="line">            --with-http_realip_module \</span><br><span class="line">            --with-http_gzip_static_module</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -598,7 +624,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/29/%E5%90%AF%E5%8A%A8nginx%E6%97%B6%E4%B8%80%E9%97%AA%E8%80%8C%E8%BF%87%E5%B9%B6%E6%8A%A5%E9%94%99CreateFile-%E6%88%96%E8%80%85CreateDirectory/" rel="next" title="启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()">
+              <a href="/archives/e2fc7097.html" rel="next" title="启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()">
                 <i class="fa fa-chevron-left"></i> 启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()
               </a>
             
@@ -728,13 +754,13 @@
                   <span class="links-of-author-item">
                     <a rel="external nofollow" href="https://github.com/kaniwong" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                        <i class="fa fa-fw fa-github"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a rel="external nofollow" href="mailto:565746947@qq.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-envelope"></i></a>
                   </span>
                 
             </div>
@@ -761,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">1.</span> <span class="nav-text">Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载nginx"><span class="nav-number">2.2.</span> <span class="nav-text">下载nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加运行用户"><span class="nav-number">2.3.</span> <span class="nav-text">添加运行用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装"><span class="nav-number">2.4.</span> <span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解压、进入nginx根目录"><span class="nav-number">2.4.1.</span> <span class="nav-text">解压、进入nginx根目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">2.4.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译安装-1"><span class="nav-number">2.4.3.</span> <span class="nav-text">编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开机启动"><span class="nav-number">2.4.4.</span> <span class="nav-text">开机启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.4.5.</span> <span class="nav-text">配置环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">3.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-1"><span class="nav-number">4.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载PHP"><span class="nav-number">4.1.</span> <span class="nav-text">下载PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装-2"><span class="nav-number">4.2.</span> <span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解压、进入php根目录"><span class="nav-number">4.2.1.</span> <span class="nav-text">解压、进入php根目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">4.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能遇到的问题"><span class="nav-number">4.4.</span> <span class="nav-text">可能遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译安装-3"><span class="nav-number">4.4.1.</span> <span class="nav-text">编译安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置PHP"><span class="nav-number">4.4.2.</span> <span class="nav-text">配置PHP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境变量-1"><span class="nav-number">4.4.3.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动服务"><span class="nav-number">4.4.4.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改nginx配置"><span class="nav-number">4.4.5.</span> <span class="nav-text">修改nginx配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写php测试页"><span class="nav-number">4.4.6.</span> <span class="nav-text">编写php测试页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">5.</span> <span class="nav-text">MySQL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx"><span class="nav-number">1.</span> <span class="nav-text">Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载nginx"><span class="nav-number">1.1.2.</span> <span class="nav-text">下载nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加运行用户"><span class="nav-number">1.1.3.</span> <span class="nav-text">添加运行用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装"><span class="nav-number">1.2.</span> <span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压、进入nginx根目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">解压、进入nginx根目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.2.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">编译安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开机启动"><span class="nav-number">1.3.</span> <span class="nav-text">开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境变量"><span class="nav-number">1.4.</span> <span class="nav-text">配置环境变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP"><span class="nav-number">2.</span> <span class="nav-text">PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-1"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载PHP"><span class="nav-number">2.1.1.</span> <span class="nav-text">下载PHP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装-2"><span class="nav-number">2.2.</span> <span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压、进入php根目录"><span class="nav-number">2.2.1.</span> <span class="nav-text">解压、进入php根目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能遇到的问题"><span class="nav-number">2.2.3.</span> <span class="nav-text">可能遇到的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装-3"><span class="nav-number">2.2.4.</span> <span class="nav-text">编译安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置PHP"><span class="nav-number">2.3.</span> <span class="nav-text">配置PHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动服务"><span class="nav-number">2.3.2.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改nginx配置"><span class="nav-number">2.3.3.</span> <span class="nav-text">修改nginx配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写php测试页"><span class="nav-number">2.4.</span> <span class="nav-text">编写php测试页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-2"><span class="nav-number">3.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载系统自带的mariadb"><span class="nav-number">3.1.1.</span> <span class="nav-text">卸载系统自带的mariadb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载MySQL"><span class="nav-number">3.1.3.</span> <span class="nav-text">下载MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加运行用户-1"><span class="nav-number">3.1.4.</span> <span class="nav-text">添加运行用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译安装-4"><span class="nav-number">3.2.</span> <span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解压、进入nginx根目录-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">解压、进入nginx根目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-2"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -793,15 +819,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a rel="external nofollow" class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a rel="external nofollow" class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
 
 
 

@@ -84,12 +84,12 @@
 
 <meta name="description" content="一叶帆舟，在这记录分享日常写代码所遇到的问题，方便自己查阅回顾，也希望能帮助遇到相同问题的你。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://kaniwong.github.io/tags/index.html">
+<meta property="og:title" content="文章分类">
+<meta property="og:url" content="https://kaniwong.github.io/categories/index.html">
 <meta property="og:site_name" content="一叶帆舟">
 <meta property="og:description" content="一叶帆舟，在这记录分享日常写代码所遇到的问题，方便自己查阅回顾，也希望能帮助遇到相同问题的你。">
-<meta property="article:published_time" content="2020-03-28T10:35:00.000Z">
-<meta property="article:modified_time" content="2020-03-28T11:04:29.639Z">
+<meta property="article:published_time" content="2020-03-28T10:07:16.000Z">
+<meta property="article:modified_time" content="2020-03-28T11:04:17.686Z">
 <meta property="article:author" content="Kani wong">
 <meta property="article:tag" content="一叶帆舟-kaniwong-kani-php-Laravel-Linux-MySql-hexo-Blog-博客">
 <meta name="twitter:card" content="summary">
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://kaniwong.github.io/tags/"/>
+  <link rel="canonical" href="https://kaniwong.github.io/categories/"/>
 
 
 
 
 
-  <title>web端实现rtsp播放 | 一叶帆舟</title>
+  <title>hexo next主题链接带有%20 | 一叶帆舟</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kaniwong.github.io/2020/03/29/web%E7%AB%AF%E5%AE%9E%E7%8E%B0rtsp%E6%92%AD%E6%94%BE/">
+    <link itemprop="mainEntityOfPage" href="https://kaniwong.github.io/archives/b594f684.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kani wong">
@@ -308,7 +308,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">web端实现rtsp播放</h2>
+          <h2 class="post-title" itemprop="name headline">hexo next主题链接带有%20</h2>
         
 
         <div class="post-meta">
@@ -320,7 +320,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-29T09:12:30+08:00">2020-03-29</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T21:42:20+08:00">2020-03-28</time>
             
 
             
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/rtsp/" itemprop="url" rel="index">
-                    <span itemprop="name">rtsp</span>
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
 
@@ -364,10 +364,6 @@
           
 
           
-              <div class="post-description">
-                  在web端实现rtsp流播放的方法有好几种，网上也有不少归纳总结的很好的文章，这里就只说下我个人平时项目上使用到最多和觉得较好的两种。
-              </div>
-          
 
         </div>
       </header>
@@ -382,94 +378,12 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在web端实现rtsp流播放的方法有好几种，网上也有不少归纳总结的很好的文章，这里就只说下我个人平时项目上使用到最多和觉得较好的两种。<s>最重要都是免费，嘻嘻</s>。</p>
-<h1 id="Streamedian"><a href="#Streamedian" class="headerlink" title="Streamedian"></a>Streamedian</h1><p>在没有特殊情况下的话推荐直接使用 <a href="https://streamedian.com/" target="_blank" rel="noopener">streamedian</a>，简单粗暴。</p>
-<h2 id="安装-amp-使用"><a href="#安装-amp-使用" class="headerlink" title="安装 &amp; 使用"></a>安装 &amp; 使用</h2><p>使用streamedian需要下载js库和代理服务器，选择自己所用的开发系统下载安装即可。<a id="more"></a></p>
-<p><img src="/images/QQ20200329-094223.png" alt=""></p>
-<p>安装完成后打开应用后会在浏览器中弹出如下图的页面，说明就已经成功了（没错！就是这么简单）。</p>
-<p><img src="/images/QQ20200329-094830.png" alt=""></p>
-<p>接下来你要做的就是拼接 <code>rtsp</code> 地址，每个供应商的拼接方法多少会有点不一样，所以具体情况请根据对应的开发文档灵活变通下。这里也列出我常用的两种：</p>
-<p><strong>大华</strong>：</p>
-<p>rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/cam/realmonitor?channel=1&amp;subtype=0（这里的参数请参考大华提供的开发文档，如果没特殊需求可以不用做更改直接使用）</p>
-<p><strong>霍尼韦尔</strong>：</p>
-<p>rtsp://<code>username</code>:<code>password</code>@<code>ip</code>:554/h264</p>
-<p>点击 <code>set</code> ，不出意外就可以看到画面了。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><strong>白嫖是有极限的！</strong></p>
-<ul>
-<li>只能同时打开两个流视频</li>
-<li>只支持内网</li>
-</ul>
-<p>如果有需求可以选择对应的付费版本。</p>
-<p><img src="/images/chongqianjiunengjiejue.jpeg" alt=""></p>
-<h1 id="FFmpeg-Nginx"><a href="#FFmpeg-Nginx" class="headerlink" title="FFmpeg + Nginx"></a>FFmpeg + Nginx</h1><p>本来一直使用streamedian都没什么问题，直到在一个项目上突然掉坑里爬不出来，链接只能是localhost，只要写服务器ip就会被认定是外网。</p>
-<p><img src="/images/1513758710130558.jpg" alt=""></p>
-<p>Google+百度都找不到这样的栗子，明明其他项目都是这么走过来的，网络也没有问题，ip也是对的，nginx配置也是对的……（感觉头发又掉了几根T^T）</p>
-<p>总不能一直在这个问题上纠结下去<s>（客户在催了）</s>，只好换种方式来搞。</p>
-<p>这种方法原理是通过 <code>ffmepg</code> 将 <code>rtsp</code> 转码成为 <code>rtmp</code> ，再通过 <code>nginx</code> 反代来实现的。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>不同的系统可能会有差异，不过思路是相通的，这里我用的是Windows10。</p>
-<h2 id="FFmpeg"><a href="#FFmpeg" class="headerlink" title="FFmpeg"></a>FFmpeg</h2><ul>
-<li><p>首先需要到官网下载 <a href="ffmpeg.org/download.html">ffmpeg.org/download.html</a></p>
-</li>
-<li><p>下载完之后解压到哪个盘都行，记住路径就行，因为下一步要用到。</p>
-</li>
-<li><p>右击我的电脑图标——选择属性，选择高级系统设置命令，然后在弹出的窗口中选择环境变量。</p>
-</li>
-<li><p>找到 <code>Path</code> ,选中编辑。（如果没有直接新建一个即可）</p>
-<p><img src="/images/WechatIMG119.png" alt=""></p>
-</li>
-<li><p>新建一个环境变量，这里的路径填入第二步你解压的ffmpeg文件夹路径下的 <code>bin</code> 文件夹。</p>
-<p><img src="/images/WechatIMG117.png" alt=""></p>
-</li>
-<li><p>最后在 <code>cmd</code> 中输入指令 <code>ffmpeg -version</code> ，如果出现如下图的内容，就说明已经安装完成。</p>
-<p><img src="/images/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTgwMTMxMTc1MjQ2NTA0.jpeg" alt=""></p>
-</li>
-</ul>
-<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ul>
-<li><p>同样你需要先下载 <a href="http://nginx-win.ecsds.eu/download/nginx%201.7.11.3%20Gryphon.zip" target="_blank" rel="noopener">nginx 1.7.11.3 Gryphon.zip</a></p>
-</li>
-<li><p>解压</p>
-</li>
-<li><p>进入到解压后的文件夹中，打开 conf ，复制 <code>nginx-win.conf</code> 并重命名为  <code>nginx-win-rtmp.conf</code> 。</p>
-</li>
-<li><p>打开  <code>nginx-win-rtmp.conf</code> ，在文件的最末端添加以下配置信息，保存。</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设定rtmp服务器，实现推流</span></span><br><span class="line">rtmp&#123;</span><br><span class="line">	server&#123;</span><br><span class="line">		<span class="attribute">listen</span> <span class="number">1935</span>;</span><br><span class="line">		<span class="attribute">application</span> live&#123;</span><br><span class="line">			<span class="attribute">live</span> <span class="literal">on</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开  <code>cmd</code> ，依次输入指令（进入到nginx根目录，指定配置文件启动nginx）</p>
-<ul>
-<li><p><code>cd D:\ngnx-1.7.11.3-Gryphon</code> </p>
-</li>
-<li><p><code>d:</code></p>
-</li>
-<li><p><code>nginx -c D:\ngnx-1.7.11.3-Gryphon\ngnx-1.7.11.3-Gryphon\conf\nginx-win-rtmp.conf</code></p>
-</li>
-<li><p>这时候打开任务管理器就可以看到有 <code>nginx.exe</code> 这个进程，或者是打开浏览器输入 <code>localhost:8080</code></p>
-<p>看到nginx默认首页，都说明已经开启了。</p>
-<p><img src="/images/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTgwMjA3MTE0MTIyNDQw.jpeg" alt=""></p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="转码"><a href="#转码" class="headerlink" title="转码"></a>转码</h1><ul>
-<li><p>打开 <code>cmd</code> ，同时确保 nginx 是开启的</p>
-</li>
-<li><p>输入指令 <code>ffmpeg -i &quot;rtsp://username:password@ip:554/cam/realmonitor?channel=1&amp;subtype=0&quot; -f mp4 -vcodec copy -r $framerate -s $framewh -b:v $bitrate  -an -f flv &quot;rtmp://localhost:1935/live/&quot;</code> （这里rtmp链接的localhost可以换成ip地址）</p>
-</li>
-<li><p>回车后你就会看到以下内容</p>
-<p><img src="/images/WX20200329-173215.png" alt=""></p>
-</li>
-<li><p>到这里就全部完成了，通过 <code>rtmp://localhost:1935/live/</code> 这个链接就可以看到转码后的视频了。</p>
-<ul>
-<li>可以通过vlc查看</li>
-<li>也可以通过 <code>video.js</code> 来直接在Web页面进行播放</li>
-</ul>
-</li>
-</ul>
-<h1 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
-<li>这里的 <code>rtsp</code> 链接请根据实际开发来填写</li>
-<li><code>rtmp</code> 的端口号需要跟 <code>nginx-win-rtmp.conf</code> 保持一致，如果不熟练的可以直接使用跟文章相同的配置。</li>
-<li>这个方法的缺点很明显，切换播放源的时候特慢，需要等待4-6秒那样子，画面延迟在1.5-2秒左右。</li>
-<li>切换播放源的时候需要先 kill 掉 <code>nginx</code> 服务，再执行一遍转码的步骤，所以导致了切换速度感人。</li>
-</ul>
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用上next主题以后，在本地运行起来发现链接后面都带有一个 <code>%20</code> ，导致了跳转过后都直接404了。</p>
+<h2 id="排错-原因"><a href="#排错-原因" class="headerlink" title="排错/原因"></a>排错/原因</h2><p>默认的主题并没有这个问题，所以可能是next主题自带的bug。</p>
+<p>打开主题的配置文件  <code>/themes/next/_config.yml</code> ，直接<code>Ctrl+F</code> 查找 <code>menu</code> ，通过比对两个主题的区别可以发现next主题每一个链接后面都有空格，所以猜想是这个原因导致了，修改过后果然就行了。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>去除掉链接后面的空格即可<a id="more"></a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /||home</span><br><span class="line">  about: /about/||user</span><br><span class="line">  tags: /tags/||tags</span><br><span class="line">  categories: /categories/||th</span><br><span class="line">  archives: /archives/|| archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -487,17 +401,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-            <a href="/tags/rtsp/" rel="tag"># rtsp</a>
+            <a href="/tags/next/" rel="tag"># next</a>
           
-            <a href="/tags/ffmpeg/" rel="tag"># ffmpeg</a>
-          
-            <a href="/tags/streamedian/" rel="tag"># streamedian</a>
-          
-            <a href="/tags/rtmp/" rel="tag"># rtmp</a>
-          
-            <a href="/tags/web/" rel="tag"># web</a>
+            <a href="/tags/hexo%E4%B8%BB%E9%A2%98/" rel="tag"># hexo主题</a>
           
         </div>
       
@@ -510,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/28/hexo-next%E4%B8%BB%E9%A2%98%E9%93%BE%E6%8E%A5%E5%B8%A6%E6%9C%89-20/" rel="next" title="hexo next主题链接带有%20">
-                <i class="fa fa-chevron-left"></i> hexo next主题链接带有%20
+              <a href="/archives/8fb5d5d3.html" rel="next" title="hexo 报错 FATAL can not read a block mapping entry; a multiline key may not be an implicit key at line 103, column 16">
+                <i class="fa fa-chevron-left"></i> hexo 报错 FATAL can not read a block mapping entry; a multiline key may not be an implicit key at line 103, column 16
               </a>
             
           </div>
@@ -520,8 +428,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/03/29/%E5%90%AF%E5%8A%A8nginx%E6%97%B6%E4%B8%80%E9%97%AA%E8%80%8C%E8%BF%87%E5%B9%B6%E6%8A%A5%E9%94%99CreateFile-%E6%88%96%E8%80%85CreateDirectory/" rel="prev" title="启动nginx时一闪而过并报错CreateFile()或者CreateDirectory()">
-                启动nginx时一闪而过并报错CreateFile()或者CreateDirectory() <i class="fa fa-chevron-right"></i>
+              <a href="/archives/4fe5484.html" rel="prev" title="web端实现rtsp播放">
+                web端实现rtsp播放 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,13 +552,13 @@
                   <span class="links-of-author-item">
                     <a rel="external nofollow" href="https://github.com/kaniwong" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                        <i class="fa fa-fw fa-github"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a rel="external nofollow" href="mailto:565746947@qq.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-envelope"></i></a>
                   </span>
                 
             </div>
@@ -677,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Streamedian"><span class="nav-number">2.</span> <span class="nav-text">Streamedian</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-amp-使用"><span class="nav-number">2.1.</span> <span class="nav-text">安装 &amp; 使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">2.2.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FFmpeg-Nginx"><span class="nav-number">3.</span> <span class="nav-text">FFmpeg + Nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">4.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FFmpeg"><span class="nav-number">4.1.</span> <span class="nav-text">FFmpeg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx"><span class="nav-number">4.2.</span> <span class="nav-text">Nginx</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转码"><span class="nav-number">5.</span> <span class="nav-text">转码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项-1"><span class="nav-number">6.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排错-原因"><span class="nav-number">2.</span> <span class="nav-text">排错&#x2F;原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
             
 
           </div>
@@ -709,15 +617,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a rel="external nofollow" class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a rel="external nofollow" class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
 
 
 
