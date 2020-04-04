@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Centos8 通过yum安装MySQL8</title>
+    <url>/archives/ba938faa.html</url>
+    <content><![CDATA[<blockquote>
+<p>我的环境：Linux version 4.18.0-147.el8.x86_64</p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="下载MySQL-rpm包"><a href="#下载MySQL-rpm包" class="headerlink" title="下载MySQL rpm包"></a>下载MySQL rpm包</h2><ul>
+<li><p>进入官网下载 <a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/repo/yum/</a></p>
+</li>
+<li><p>选择版本，点击 <code>Download</code></p>
+<p><img src="/images/QQ20200404-222941.png" alt="MySQL Community Downloads"></p>
+</li>
+<li><p>右键-&gt;复制链接<a id="more"></a></p>
+<p><img src="/images/QQ20200404-223014.png" alt="获取下载链接"></p>
+</li>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;dev.mysql.com&#x2F;get&#x2F;mysql80-community-release-el8-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="清除环境"><a href="#清除环境" class="headerlink" title="清除环境"></a>清除环境</h2><blockquote>
+<p>如果有安装过，需要把原有的 mysql 卸载掉，如果没有可直接跳过这一步。</p>
+</blockquote>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -rf &#x2F;usr&#x2F;local&#x2F;mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum remove mysql mysql-server mysql-libs</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el8-1.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
+
+<h1 id="启动MySQL"><a href="#启动MySQL" class="headerlink" title="启动MySQL"></a>启动MySQL</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<h2 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable mysqld</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h1><h2 id="进入MySQL"><a href="#进入MySQL" class="headerlink" title="进入MySQL"></a>进入MySQL</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql -uroot #此时密码为空</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改密码-1"><a href="#修改密码-1" class="headerlink" title="修改密码"></a>修改密码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;myPassword&#39;; &#x2F;&#x2F;myPassword:你的新密码</span><br><span class="line">flush privileges; &#x2F;&#x2F;刷新权限表</span><br></pre></td></tr></table></figure>
+
+<h2 id="退出-amp-amp-重新进入"><a href="#退出-amp-amp-重新进入" class="headerlink" title="退出 &amp;&amp; 重新进入"></a>退出 &amp;&amp; 重新进入</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">exit;</span><br><span class="line">mysql -uroot -p #下一步会提示输入密码</span><br></pre></td></tr></table></figure>
+
+<h3 id="防火墙放行3306端口"><a href="#防火墙放行3306端口" class="headerlink" title="防火墙放行3306端口"></a>防火墙放行3306端口</h3><blockquote>
+<p>这么做是为了能够使用 Navicat 等数据库管理工具进行远程连接MySQL</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-port&#x3D;3306&#x2F;tcp --permanent &amp;&amp; firewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br></pre></td></tr></table></figure>
+
+<p>结束。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Centos 8</tag>
+        <tag>MySQL</tag>
+        <tag>yum</tag>
+        <tag>MySQL8</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020 PHPStorm最新激活码，亲测可用 </title>
     <url>/archives/bdad378d.html</url>
     <content><![CDATA[<p>谷歌、百度一搜 PHPStorm 激活码就会出现一大堆，然而有很多都是已经不可用的了，所以在这里只会分享我个人测试过可以用的激活码。在此也感谢各位无私贡献的大佬。</p>
@@ -309,9 +366,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Centos 8</tag>
         <tag>LNMP</tag>
         <tag>编译安装</tag>
-        <tag>Centos8</tag>
         <tag>PHP环境搭建</tag>
         <tag>MySQL</tag>
         <tag>Nginx</tag>
