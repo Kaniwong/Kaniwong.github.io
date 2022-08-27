@@ -14,7 +14,7 @@
 <meta property="og:description" content="You can hide pages that are not included in your robots.txt.liquid file by customizing the  section of your store&#39;s theme.liquid layout file.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-27T01:41:11.000Z">
-<meta property="article:modified_time" content="2022-08-27T01:49:42.990Z">
+<meta property="article:modified_time" content="2022-08-27T04:46:14.404Z">
 <meta property="article:author" content="Kani Wong">
 <meta property="article:tag" content="Shopify">
 <meta property="article:tag" content="SEO">
@@ -164,10 +164,6 @@
 <h3 id="Hiding-‘Search’-page"><a href="#Hiding-‘Search’-page" class="headerlink" title="Hiding ‘Search’ page"></a>Hiding ‘Search’ page</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if template contains &#x27;search&#x27; %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;robots&quot;</span> <span class="attr">content</span>=<span class="string">&quot;noindex&quot;</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="Hiding-a-specific-page-by-handle"><a href="#Hiding-a-specific-page-by-handle" class="headerlink" title="Hiding a specific page by handle"></a>Hiding a specific page by handle</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.handle contains &#x27;page-handle-you-want-to-exclude&#x27; %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;robots&quot;</span> <span class="attr">content</span>=<span class="string">&quot;noindex&quot;</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Click Save.</li>
-</ul>
 
   </div>
 </article>

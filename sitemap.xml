@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kaniwong.github.io/2022/07/27/Sticky-Header-Dawn-Theme-Shopify/</loc>
+    <loc>https://kaniwong.github.io/2022/08/18/Add-color-swatch-basic-Dawn-Theme-Shopify/</loc>
+    
+    <lastmod>2022-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/2022/08/23/Add-free-shipping-progress-bar-Dawn-theme-shopify/</loc>
+    
+    <lastmod>2022-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/2022/08/01/Add-Hover-Effect-to-Mega-Menu-Dawn-Theme-Shopify/</loc>
     
     <lastmod>2022-08-27</lastmod>
     
@@ -20,36 +38,9 @@
   </url>
   
   <url>
-    <loc>https://kaniwong.github.io/googled9122c861c353401.html</loc>
+    <loc>https://kaniwong.github.io/2022/08/16/How-to-add-infinite-scroll-collection-Dawn-Theme-Shopify/</loc>
     
-    <lastmod>2022-08-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaniwong.github.io/2022/08/23/Add-free-shipping-progress-bar-Dawn-theme-shopify/</loc>
-    
-    <lastmod>2022-08-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaniwong.github.io/2022/08/18/Add-color-swatch-basic-Dawn-Theme-Shopify/</loc>
-    
-    <lastmod>2022-08-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kaniwong.github.io/2022/08/18/How-To-Change-Buy-It-Now-Button-Text/</loc>
-    
-    <lastmod>2022-08-18</lastmod>
+    <lastmod>2022-08-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,25 +49,34 @@
   <url>
     <loc>https://kaniwong.github.io/2022/08/15/How-to-add-red-dot-at-header-menu-Dawn-theme-Shopify/</loc>
     
-    <lastmod>2022-08-16</lastmod>
+    <lastmod>2022-08-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://kaniwong.github.io/2022/08/16/How-to-add-infinite-scroll-collection-Dawn-Theme-Shopify/</loc>
+    <loc>https://kaniwong.github.io/2022/08/18/How-To-Change-Buy-It-Now-Button-Text/</loc>
     
-    <lastmod>2022-08-16</lastmod>
+    <lastmod>2022-08-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://kaniwong.github.io/2022/08/01/Add-Hover-Effect-to-Mega-Menu-Dawn-Theme-Shopify/</loc>
+    <loc>https://kaniwong.github.io/2022/07/27/Sticky-Header-Dawn-Theme-Shopify/</loc>
     
-    <lastmod>2022-08-15</lastmod>
+    <lastmod>2022-08-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/googled9122c861c353401.html</loc>
+    
+    <lastmod>2022-08-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
