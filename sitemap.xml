@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kaniwong.github.io/2022/08/28/Add-Simple-countdown-timer-to-your-shopify-store-via-JavaScript/</loc>
+    
+    <lastmod>2022-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kaniwong.github.io/2022/08/28/Most-Used-Shopify-script-conditions/</loc>
     
     <lastmod>2022-08-28</lastmod>
@@ -158,6 +167,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://kaniwong.github.io/tags/JavaScript/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -197,6 +213,20 @@
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Shopify-Script/Script-Editor/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/categories/Shopify/JavaScript/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/categories/Shopify/JavaScript/Theme/</loc>
     <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
