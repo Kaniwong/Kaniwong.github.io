@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2022/08/28/Most-Used-Shopify-script-conditions/
 https://kaniwong.github.io/2022/08/18/Add-color-swatch-basic-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2022/08/23/Add-free-shipping-progress-bar-Dawn-theme-shopify/
 https://kaniwong.github.io/2022/08/01/Add-Hover-Effect-to-Mega-Menu-Dawn-Theme-Shopify/
@@ -14,7 +15,11 @@ https://kaniwong.github.io/tags/Dawn/
 https://kaniwong.github.io/tags/Theme/
 https://kaniwong.github.io/tags/GraphQl/
 https://kaniwong.github.io/tags/SEO/
+https://kaniwong.github.io/tags/Shopify-Script/
+https://kaniwong.github.io/tags/Script-Editor/
 https://kaniwong.github.io/categories/Shopify/
 https://kaniwong.github.io/categories/Shopify/Dawn/
 https://kaniwong.github.io/categories/Shopify/Dawn/Theme/
 https://kaniwong.github.io/categories/Shopify/SEO/
+https://kaniwong.github.io/categories/Shopify/Shopify-Script/
+https://kaniwong.github.io/categories/Shopify/Shopify-Script/Script-Editor/

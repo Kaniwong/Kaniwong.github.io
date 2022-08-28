@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Most-Used Shopify script conditions</title>
+      <link href="/2022/08/28/Most-Used-Shopify-script-conditions/"/>
+      <url>/2022/08/28/Most-Used-Shopify-script-conditions/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Shopify Scripts are small pieces of code that let you create personalized experiences for your customers in their cart and at checkout. <a href="https://help.shopify.com/en/manual/checkout-settings/script-editor">learn more</a></p></blockquote><h2 id="run-only-code-applied"><a href="#run-only-code-applied" class="headerlink" title="run only code applied"></a>run only code applied</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>  Input.cart.discount_code != <span class="literal">nil</span> <span class="keyword">and</span> Input.cart.discount_code.code == <span class="string">&quot;Your code&quot;</span></span><br><span class="line">    <span class="variable constant_">CAMPAIGNS</span>.each <span class="keyword">do</span> |<span class="params">campaign</span>|</span><br><span class="line">      campaign.run(Input.cart)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h2 id="customer-is-not-empty-and-email-contains-target-domain"><a href="#customer-is-not-empty-and-email-contains-target-domain" class="headerlink" title="customer is not empty and email contains target domain"></a>customer is not empty and email contains target domain</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">TARGET_DOMAIN</span> = <span class="string">&#x27;companydomain.com&#x27;</span></span><br><span class="line">customer = Input.cart.customer</span><br><span class="line"><span class="keyword">if</span> customer <span class="keyword">and</span> customer.email <span class="keyword">and</span> customer.email.<span class="keyword">include</span>?(<span class="variable constant_">TARGET_DOMAIN</span>)</span><br><span class="line">  <span class="variable constant_">CUSTOMER_IS_EMPLOYEE</span> = <span class="literal">true</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Shopify </category>
+          
+          <category> Shopify Script </category>
+          
+          <category> Script Editor </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Shopify </tag>
+            
+            <tag> Shopify Script </tag>
+            
+            <tag> Script Editor </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hiding a page from search engines</title>
       <link href="/2022/08/27/Hiding-a-page-from-search-engines/"/>
       <url>/2022/08/27/Hiding-a-page-from-search-engines/</url>

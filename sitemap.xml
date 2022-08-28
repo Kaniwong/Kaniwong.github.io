@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kaniwong.github.io/2022/08/28/Most-Used-Shopify-script-conditions/</loc>
+    
+    <lastmod>2022-08-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kaniwong.github.io/2022/08/18/Add-color-swatch-basic-Dawn-Theme-Shopify/</loc>
     
     <lastmod>2022-08-27</lastmod>
@@ -94,7 +103,7 @@
 
   <url>
     <loc>https://kaniwong.github.io/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,35 +111,49 @@
   
   <url>
     <loc>https://kaniwong.github.io/tags/Shopify/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Dawn/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Theme/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/GraphQl/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/SEO/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/tags/Shopify-Script/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/tags/Script-Editor/</loc>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -139,28 +162,42 @@
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Dawn/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Dawn/Theme/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/SEO/</loc>
-    <lastmod>2022-08-27</lastmod>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/categories/Shopify/Shopify-Script/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/categories/Shopify/Shopify-Script/Script-Editor/</loc>
+    <lastmod>2022-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
