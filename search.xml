@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Display the date, like &quot;May 5th&quot;, using Liquid strftime?</title>
+      <link href="/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/"/>
+      <url>/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Quick-Look-👀"><a href="#Quick-Look-👀" class="headerlink" title="Quick Look 👀"></a>Quick Look 👀</h2><img src="/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/Kani_0-1664333338151.png" class="" title="Date example"><h2 id="How-to-do-it"><a href="#How-to-do-it" class="headerlink" title="How to do it"></a>How to do it</h2><p><a href="http://strftime.net/">Strftime</a> doesn’t allow you to format a date with a suffix. </p><p>So we can build filter to get the correct suffix.</p><img src="/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/d01373f082025aaf375d185af1edab64034f1a37.webp" class="" title="Date rules"><h2 id="Getting-started-✏️"><a href="#Getting-started-✏️" class="headerlink" title="Getting started ✏️"></a>Getting started ✏️</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% assign day = &quot;now&quot; | date: &quot;%e&quot;| modulo: 10 %&#125;</span><br><span class="line">&#123;%- case day -%&#125;</span><br><span class="line">    &#123;%- when 1 -%&#125;</span><br><span class="line">        &#123;% assign suffix = &#x27;st&#x27; %&#125;</span><br><span class="line">    &#123;%- when 2 -%&#125;</span><br><span class="line">        &#123;% assign suffix = &#x27;nd&#x27; %&#125;</span><br><span class="line">    &#123;%- when 3 -%&#125;</span><br><span class="line">        &#123;% assign suffix = &#x27;rd&#x27; %&#125;</span><br><span class="line">    &#123;%- else -%&#125;</span><br><span class="line">        &#123;% assign suffix = &#x27;th&#x27; %&#125;</span><br><span class="line">&#123;%- endcase -%&#125;</span><br><span class="line">&#123;&#123; &quot;now&quot; | date: &quot;%e[S] %B, %Y&quot; | replace: &#x27;[S]&#x27;,suffix &#125;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Shopify </category>
+          
+          <category> Liquid </category>
+          
+          <category> Theme </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Shopify </tag>
+            
+            <tag> Theme </tag>
+            
+            <tag> Liquid </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Add Simple countdown timer to your shopify store via JavaScript</title>
       <link href="/2022/08/28/Add-Simple-countdown-timer-to-your-shopify-store-via-JavaScript/"/>
       <url>/2022/08/28/Add-Simple-countdown-timer-to-your-shopify-store-via-JavaScript/</url>
