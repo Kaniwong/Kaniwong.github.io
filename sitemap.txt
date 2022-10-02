@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2022/07/27/Sticky-Header-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/
 https://kaniwong.github.io/2022/08/28/Add-Simple-countdown-timer-to-your-shopify-store-via-JavaScript/
 https://kaniwong.github.io/2022/08/28/Most-Used-Shopify-script-conditions/
@@ -9,7 +10,6 @@ https://kaniwong.github.io/2022/08/27/Hiding-a-page-from-search-engines/
 https://kaniwong.github.io/2022/08/16/How-to-add-infinite-scroll-collection-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2022/08/15/How-to-add-red-dot-at-header-menu-Dawn-theme-Shopify/
 https://kaniwong.github.io/2022/08/18/How-To-Change-Buy-It-Now-Button-Text/
-https://kaniwong.github.io/2022/07/27/Sticky-Header-Dawn-Theme-Shopify/
 https://kaniwong.github.io/googled9122c861c353401.html
 https://kaniwong.github.io/2022/08/01/How-to-use-fuzzy-search-with-GraphQl/
 https://kaniwong.github.io/
