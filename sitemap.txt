@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2023/01/04/How-to-remove-sort-by-option-Dawn-theme-Shopify/
 https://kaniwong.github.io/2022/10/02/Sticky-Header-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/
 https://kaniwong.github.io/2022/08/28/Add-Simple-countdown-timer-to-your-shopify-store-via-JavaScript/
