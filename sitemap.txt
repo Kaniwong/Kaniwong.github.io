@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2023/03/18/Range-settings-must-have-at-most-101-steps/
 https://kaniwong.github.io/2023/01/04/How-to-remove-sort-by-option-Dawn-theme-Shopify/
 https://kaniwong.github.io/2022/10/02/Sticky-Header-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2022/09/28/Display-the-date-like-May-5th-using-Liquid-strftime/
@@ -33,3 +34,4 @@ https://kaniwong.github.io/categories/Shopify/JavaScript/
 https://kaniwong.github.io/categories/Shopify/JavaScript/Theme/
 https://kaniwong.github.io/categories/Shopify/Liquid/
 https://kaniwong.github.io/categories/Shopify/Liquid/Theme/
+https://kaniwong.github.io/categories/Shopify/Theme/

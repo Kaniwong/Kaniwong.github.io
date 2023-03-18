@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kaniwong.github.io/2023/03/18/Range-settings-must-have-at-most-101-steps/</loc>
+    
+    <lastmod>2023-03-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kaniwong.github.io/2023/01/04/How-to-remove-sort-by-option-Dawn-theme-Shopify/</loc>
     
     <lastmod>2023-01-04</lastmod>
@@ -275,6 +284,13 @@
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Liquid/Theme/</loc>
+    <lastmod>2023-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/categories/Shopify/Theme/</loc>
     <lastmod>2023-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

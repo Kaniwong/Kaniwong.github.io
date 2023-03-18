@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Range settings must have at most 101 steps</title>
+      <link href="/2023/03/18/Range-settings-must-have-at-most-101-steps/"/>
+      <url>/2023/03/18/Range-settings-must-have-at-most-101-steps/</url>
+      
+        <content type="html"><![CDATA[<img src="/2023/03/18/Range-settings-must-have-at-most-101-steps/20230318175502.jpg" class="" title="Range step issue"><p>You may have same issue when setting shopify range step. </p><p>It means you can only have 100 <code>step</code> between <code>min</code> and <code>max</code></p><p>For example</p><p>When <code>step</code> is 1</p><p>You can setting <code>min</code> 0 and <code>max</code> 100</p><p>When <code>step</code> is 10</p><p>You can setting <code>min</code> 0 and <code>max</code> 1000</p><p>Following this rule, issue will gone! 🎉</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Shopify </category>
+          
+          <category> Theme </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Shopify </tag>
+            
+            <tag> Theme </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>How to remove &quot;sort by&quot; option  - Dawn theme Shopify</title>
       <link href="/2023/01/04/How-to-remove-sort-by-option-Dawn-theme-Shopify/"/>
       <url>/2023/01/04/How-to-remove-sort-by-option-Dawn-theme-Shopify/</url>
