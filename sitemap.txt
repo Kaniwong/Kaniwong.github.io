@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2023/04/16/How-to-set-the-default-availability-as-in-stock-for-Search-Discovery/
 https://kaniwong.github.io/2023/04/06/Shopify-Theme-Kit-request-failed-after-5-retries-with-error/
 https://kaniwong.github.io/2022/08/16/How-to-add-infinite-scroll-collection-Dawn-Theme-Shopify/
 https://kaniwong.github.io/2023/03/18/Range-settings-must-have-at-most-101-steps/
@@ -25,6 +26,8 @@ https://kaniwong.github.io/tags/Shopify-Script/
 https://kaniwong.github.io/tags/Script-Editor/
 https://kaniwong.github.io/tags/JavaScript/
 https://kaniwong.github.io/tags/Liquid/
+https://kaniwong.github.io/tags/Search-Discovery/
+https://kaniwong.github.io/tags/Filter/
 https://kaniwong.github.io/categories/Shopify/
 https://kaniwong.github.io/categories/Shopify/Dawn/
 https://kaniwong.github.io/categories/Shopify/Dawn/Theme/
@@ -36,3 +39,6 @@ https://kaniwong.github.io/categories/Shopify/JavaScript/Theme/
 https://kaniwong.github.io/categories/Shopify/Liquid/
 https://kaniwong.github.io/categories/Shopify/Liquid/Theme/
 https://kaniwong.github.io/categories/Shopify/Theme/
+https://kaniwong.github.io/categories/Shopify/Search-Discovery/
+https://kaniwong.github.io/categories/Shopify/Search-Discovery/Theme/
+https://kaniwong.github.io/categories/Shopify/Search-Discovery/Theme/Filter/
