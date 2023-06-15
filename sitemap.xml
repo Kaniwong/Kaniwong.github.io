@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kaniwong.github.io/2023/06/15/Shopify-custom-font-OTS-parsing-error-Size-of-decompressed-WOFF-2-0-is-less-than-compressed-size/</loc>
+    
+    <lastmod>2023-06-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kaniwong.github.io/2023/04/16/How-to-set-the-default-availability-as-in-stock-for-Search-Discovery/</loc>
     
     <lastmod>2023-04-16</lastmod>

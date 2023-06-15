@@ -1,3 +1,4 @@
+https://kaniwong.github.io/2023/06/15/Shopify-custom-font-OTS-parsing-error-Size-of-decompressed-WOFF-2-0-is-less-than-compressed-size/
 https://kaniwong.github.io/2023/04/16/How-to-set-the-default-availability-as-in-stock-for-Search-Discovery/
 https://kaniwong.github.io/2023/04/06/Shopify-Theme-Kit-request-failed-after-5-retries-with-error/
 https://kaniwong.github.io/2022/08/16/How-to-add-infinite-scroll-collection-Dawn-Theme-Shopify/
