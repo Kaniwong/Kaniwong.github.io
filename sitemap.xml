@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://kaniwong.github.io/2024/01/01/disable-viewport-zooming-iOS-10-safari/</loc>
+    <loc>https://kaniwong.github.io/2024/05/08/ThemeKit-request-failed-after-5-retries-with-error/</loc>
     
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,16 @@
   <url>
     <loc>https://kaniwong.github.io/2023/06/15/Shopify-custom-font-OTS-parsing-error-Size-of-decompressed-WOFF-2-0-is-less-than-compressed-size/</loc>
     
-    <lastmod>2023-06-15</lastmod>
+    <lastmod>2024-05-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kaniwong.github.io/2024/01/01/disable-viewport-zooming-iOS-10-safari/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +193,7 @@
 
   <url>
     <loc>https://kaniwong.github.io/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -192,77 +201,77 @@
   
   <url>
     <loc>https://kaniwong.github.io/tags/Shopify/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Dawn/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/GraphQl/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/SEO/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Shopify-Script/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Script-Editor/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/JavaScript/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Liquid/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Search-Discovery/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/tags/Filter/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -271,98 +280,98 @@
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Dawn/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Dawn/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/SEO/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Shopify-Script/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Shopify-Script/Script-Editor/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/JavaScript/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/JavaScript/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Liquid/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Liquid/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Search-Discovery/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Search-Discovery/Theme/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kaniwong.github.io/categories/Shopify/Search-Discovery/Theme/Filter/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
